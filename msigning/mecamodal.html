@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title></title>
+<link rel="stylesheet" type="text/css" href="modal.css">   
+<link rel="stylesheet" type="text/css" href="styles.css">   
+</head>
+<body>
+   <div class="modal-ct login-ct modal-show" data-modal-id="loginModal" data-focus="#loginUsername">
+  <h2>Sign In</h2>
+<form class="login-form js-login" action="/api/Login" data-inherit-redirect-url="true" data-message-not-found="Incorrect username or password" data-return-url="" data-validate="True" method="post">    <div class="login-inputs">
+      <div class="input-container input-username active invalid">
+        <label for="loginUsername">Username</label><br>
+        <div class="icon-wrapper">
+          <input autocomplete="off" id="loginUsername" name="username" placeholder="Username" type="text" required="" class="active invalid">
+          <div class="svg-icon icon--right valid-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icons--check"></use></svg></div>
+          <div class="svg-icon icon--right invalid-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icons--x"></use></svg></div>
+        </div>
+      </div>
+      <div class="input-container input-password">
+        <label for="loginPassword">Password</label><br>
+        <div class="icon-wrapper">
+          <input autocomplete="off" id="loginPassword" type="password" name="password" placeholder="Password" required="">
+          <div class="svg-icon icon--right valid-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icons--check"></use></svg></div>
+          <div class="svg-icon icon--right invalid-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icons--x"></use></svg></div>
+        </div>
+      </div>
+      <div class="input-container checkbox-label">
+        <input type="checkbox" name="remember" id="remember">
+        <label for="remember"> Remember me</label>
+      </div>
+    </div>
+    <div class="login-buttons">
+      <button class="btn-primary btn-login" data-loading-text="Loading.." type="submit" data-submit="login">Sign In</button>
+        <button class="btn-secondary btn-registration" type="button" data-role="modal-close">Join Now</button>
+    </div>
+    <div class="alerts"></div>
+    <div class="login-modal-links">
+        <p>Forgotten
+
+<a class="login-links" href="/Users/Account/RequestForgottenUsername">Username</a>
+        or
+
+<a class="login-links" href="/Users/Account/RequestForgottenPassword">Password</a>        ?</p>
+    </div>
+<input name="__RequestVerificationToken" type="hidden" value="msZ2sbnaBd-gv8Gy6o1NUY37-ddcMqb4_o9OSXF0mQNhrkfYTP4XJr_W7jC0pI40mto_ciXEZ82ScR1OOXH9WljYkm01"></form>
+  <div class="login-modal-help">
+    <p><a href="http://rank.force.com/meccabingo" target="_blank">Click here</a> for help or contact us on <a href="tel:08000831988">0800 083 1988</a></p>
+  </div>
+  <button type="button" class="close" aria-label="Close" data-role="modal-close">×</button>
+</div>
+
+
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>

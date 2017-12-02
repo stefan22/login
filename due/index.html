@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="modal-ct login-ct">
+      <form class="ralogin" maction="/api/Login" data-inherit-redirect-url="true" data-message-not-found="Incorrect username or password" data-return-url="" data-validate="True" method="post" data-di-form-track="">
+        <p class="title">Sign In</p>
+        
+        <div class="rainput-username active valid">
+          <label>Username</label>
+          <input type="text" placeholder="Please enter your username" autofocus/>
+          <i class="fa fa-user"></i>
+        </div>
+        
+        <div class="rainput-password">
+          <label>Password</label>
+          <input type="password" placeholder="Password" />
+          <i id="mykey" class="fa fa-key"></i>
+        </div>
+          
+        
+        <div class="rahelp">
+            <p>Forgotten <a href="#">username</a> or <a href="#">password</a>?</p>
+            <a class="raclickhere" href="#">Click here</a> for help or contact us on <a href="#">0800 083 1988</a>
+        </div>
+            
+        <div class="rabot ismecatime">
+            <div class="rajoinbutton">
+                <button class="btn-secondary btn-registration logino" type="button" 
+                      data-role="
+                      modal-close">Join Now
+                </button> 
+            </div> 
+        </div>        
+        <button type="button" class="close" aria-label="Close" data-role="modal-close">×
+        </button>
+
+        <button type="submit" data-submit="ralogin">
+          <i class="spinner"></i>
+          <span class="state">Sign In</span>
+        </button> 
+            
+        
+        
+        
+        
+      </form>
+    </div><!--  modal-ct logit-ct -->
+  </div><!-- wrapper -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+

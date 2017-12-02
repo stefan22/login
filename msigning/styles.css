@@ -1,0 +1,20 @@
+#msgbox {
+    margin: 1em 0;
+    background: #e99dc1;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 18px;
+    padding: 5px 10px;
+    box-shadow: 0px 0px 1px 1px #929292;
+    border-radius:4px;
+}
+
+
+span.tname {
+   color:#815c91;
+}
+
+.modal-ct {
+   max-height: 65rem !important;
+}
