@@ -1,2 +1,6 @@
-.DS_Store
-due/js-query.js
+**/js-query.js
+**/.git
+**/.svn
+**/CVS
+**/.DS_Store
+**/.pptx

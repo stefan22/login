@@ -1,0 +1,14 @@
+{
+    "workbench.colorTheme": "GitHub Plus",
+    "sublimeTextKeymap.promptV3Features": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.snippetSuggestions": "top",
+    "editor.formatOnPaste": true,
+    "workbench.iconTheme": "easy-icons",
+    "workbench.statusBar.visible": true,
+    "workbench.activityBar.visible": true,
+    "editor.minimap.enabled": false,
+    "editor.wordWrap": "on",
+    "window.zoomLevel": 1,
+    "editor.fontSize": 14
+}
