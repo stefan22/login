@@ -82,10 +82,10 @@ div#tooltip:after {
     }
 
     label.tooltip div {
-        width: 325px;
+        width: 325px  !important;
         font-size: .9em;
         line-height: 1.2em;
-        background-color: #eaeaea;
+        background-color: #eaeaea !important
         color: #fff;
         text-align: center;
         padding: 20px;
@@ -229,36 +229,37 @@ div#tooltip:after {
         </label>
     </div>
 <script>
+     var toolhandler = document.querySelector('.header-login');
+            toolhandler.appendChild(tooltip);
+         
+             document.querySelector('.header-login').addEventListener('click', function(e) {
+                   e.preventDefault();
 
-    var ison = document.querySelector('label.tooltip input ~div');
-    document.addEventListener('DOMContentLoaded', function(e) {
-        
-
-        if(ison.style.display == "block") {
-            ison.style.display = "none";
-        }else {
-            ison.style.display = "block";
-        }
-
-    });
-
-function chaton() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("demo").innerHTML = this.responseText;
-        var agent = document.getElementById('liveagent-button-online-contact-us').
-        innerHTML = this.responseText;
-        console.log(agent);
-          
-      }//if
-        
-    };
-    xhttp.open("GET", "https://www.meccabingo.com/contact-us#", true);
-    xhttp.send(null);
+                   console.log(e);
 
 
-}//chaton
+
+
+                   if(document.querySelector('.pone') != null) {
+                     var ison = document.querySelector('label.tooltip input ~div');
+
+                     var okbut = document.querySelector('button#vainow');
+
+                     okbut.addEventListener('click',function(e) {
+                       debugger;
+                       console.log(e);
+                       if(e.target.id == 'vainow') {
+                             ison.style.display = "none";
+                       }
+                      
+
+                     },false);
+
+                   }
+
+
+            },false);
+
 
 
     

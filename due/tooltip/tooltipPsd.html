@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>
+    tooltip
+</title>
+<style type="text/css">
+
+
+div#tooltip:after {
+    content: "";
+    position: absolute;
+    width: 26px;
+    height: 0;
+    border-width: 26px;
+    border-style: solid;
+    border-color: transparent #e8e7e8 transparent transparent;
+    top: -45px;
+    left: 295px;
+    transform: rotate(90deg);
+    background: transparent;
+}
+
+    @keyframes totip {
+        0% {
+            opacity: 0;
+            top:-200px;    
+        }
+        
+        
+        100% {
+            opacity: 1;
+            top: 80px;
+        }
+    }
+
+.face:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+    @keyframes shake {
+      10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+      }
+      20%, 80% {
+        transform: translate3d(2px, 0, 0);
+      }
+      30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+      }
+      40%, 60% {
+        transform: translate3d(4px, 0, 0);
+      }
+    }
+
+    .lowrapper {
+        animation-name: totip;
+        animation-duration: 1s;
+        position: absolute;
+        transition: top .5s, opacity .5s;
+        left: 290px;
+        top:70px;
+       
+
+    }
+
+    #tooltip {
+        animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+        transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+        width: 366px !important;
+        background-color: #fff;
+        padding: 20px;
+        height: 412px;
+    }
+
+    label.tooltip {
+        position: relative;
+        border-bottom: 2px dotted #980156;
+        color: #5390c1;
+        cursor: pointer;
+    }
+
+    label.tooltip div {
+       
+
+    }
+
+    label.tooltip input:checked~div {
+        display: none;
+    }
+
+    label.tooltip input {
+        display: none;
+    }
+
+
+    #tooltip .tootop {
+        height: 80px !important;
+        display: block;
+        border-left: 1px solid #e7e7e7;
+        border-top-left-radius: 4px;
+        border-top-right-radius:4px;
+        border-top: 1px solid #e7e7e7;
+        border-right: 1px solid #e7e7e7;
+        background-color: #fff !important;
+    }
+
+    .tootop h1 {
+        color: #823f90 !important;
+        font-weight: bold !important;
+        text-align: center;
+        letter-spacing: 1px;
+        border-bottom: 1px solid #eaeaea;
+        width: 90%;
+        margin: 0 auto;
+        padding: 0.5em 0;
+        line-height: 40px;
+    }
+
+    .tootop h1 i {
+        padding:0 .5em;
+        font-size: 1.25em;
+    }
+
+    #tooltip .toobottom {
+        display: block !important;
+        left: 0 !important;
+        top: 102px !important;
+        border-left: 1px solid #e7e7e7;
+        border-bottom: 1px solid #e7e7e7;
+        border-right: 1px solid #e7e7e7;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        height: 270px !important;
+        margin-top: -15px !important;
+        text-align: center !important;
+        padding:0 20px;
+        font-family: 'FranklinGothicRegular', Arial, sans-serif;
+    }
+
+    #tooltip .toobottom p {
+        color: #333 !important;
+        font-size: 16px !important;
+        font-family: 'FranklinGothicRegular', Arial, sans-serif;
+    }
+
+    .pone {
+        margin: 1.25em 0 1em;
+        border: 1px solid #9a8a8a !important;
+        padding: .5em 0;
+        border-radius: 4px;
+        text-align: center;
+        background-color: #823f90 !important;
+    }
+
+    p.pnull {
+        color: #333;
+        font-size: 16px !important;
+        line-height: 22px !important;
+        letter-spacing: .15px;
+
+    }
+
+    span.logcolor {
+        font-weight: bolder;
+        line-height: 3em;
+        text-align: center;
+        letter-spacing: .25px !important;
+
+    }
+
+
+    .pone a {
+        text-decoration: none !important;
+        color: #fff !important;
+        letter-spacing: .5px;
+        width: 95%;
+        margin: 2em auto;
+        font-size: 17px !important;
+        font-weight: 100;
+        line-height: 38px;
+        vertical-align: bottom;
+}
+
+
+
+
+
+
+
+    }
+    .toobottom p.pone:nth-child(3) {
+        margin-top:0;
+    }
+
+    .toobottom button {
+        background-color: #fbfbfb !important;
+        padding: 15px 5px;
+        color: #333;
+        width: 100%;
+        border: 1px solid #eaeaea !important;
+        font-size: 18px;
+        line-height: 24px;
+        text-align: center;
+        cursor: pointer;
+    }
+    .toobottom button:focus, .toobottom button:active {
+        outline: none;
+    }
+    img.chatup {
+        max-width: 36px !important;
+        margin-right:10px;
+        height: auto;
+    }
+</style>
+</head>
+
+<body>
+    <h1>TOOLTIP</h1>
+
+
+    <div class="lowrapper">
+        <label class="tooltip">
+            <input type="checkbox">
+            <div id="tooltip">
+                <div class="tootop">
+                    <h1>
+                        
+                        We've Missed You
+                        
+                    </h1>
+                </div>
+                <!-- endoftootop -->
+
+                <div class="toobottom">
+                    <p class="pnull">If you are unable to remember<br/> your login credentials<br/>
+                        Call on <span class="logcolor">0800 111 222</span>
+                    </p>
+                    <p class="pone">
+                        <a href="tel:08000831988">
+                           <img class="chatup" src="http://sb.monetate.net/img/1/748/1312856.png" width="36" height="36">
+                            Click here to chat with us
+                        </a>
+                    </p>
+                    
+                        
+                    
+                    <button id="vainow" type="submit" class="btn-submit">
+                        I'm ok for now
+                    </button>
+                </div>
+                <!-- endoftoobottom -->
+            </div>
+            <!-- endof tooltip -->
+        </label>
+    </div>
+<script>
+
+    var ison = document.querySelector('label.tooltip input ~div');
+    document.addEventListener('DOMContentLoaded', function(e) {
+        
+
+        if(ison.style.display == "block") {
+            ison.style.display = "none";
+        }else {
+            ison.style.display = "block";
+        }
+
+    });
+
+function chaton() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("demo").innerHTML = this.responseText;
+        var agent = document.getElementById('liveagent-button-online-contact-us').
+        innerHTML = this.responseText;
+        console.log(agent);
+          
+      }//if
+        
+    };
+    xhttp.open("GET", "https://www.meccabingo.com/contact-us#", true);
+    xhttp.send(null);
+
+
+}//chaton
+
+
+    
+
+
+
+    
+</script>
+
+
+</body>
+
+</html>

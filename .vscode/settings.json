@@ -1,10 +1,10 @@
 {
-    "workbench.colorTheme": "GitHub Plus",
+    "workbench.colorTheme": "Base16 Light Bright",
     "sublimeTextKeymap.promptV3Features": true,
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.snippetSuggestions": "top",
     "editor.formatOnPaste": true,
-    "workbench.iconTheme": "easy-icons",
+    "workbench.iconTheme": "material-icon-theme",
     "workbench.statusBar.visible": true,
     "workbench.activityBar.visible": true,
     "editor.minimap.enabled": false,
