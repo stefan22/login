@@ -16,7 +16,7 @@
 - tablet (portrait/landscape)
 - mobile (portrait/landscape)
 
-### building
+### building (under due)
 - tooltip/popup
 - appears once per session
 - option for call centre (0800 number)
@@ -26,4 +26,7 @@
 - monetate
 - css animations
 
-> 2 javascript files: one for desktop and tablet and another one for mobile implementations
+> 2 javascript files: one for desktop and tablet and another one for mobile implementations lo
+
+
+### also new login page with css animations
