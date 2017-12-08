@@ -24,5 +24,6 @@
 - option button to close popup ("I'm ok for now")
 - background overlay
 - monetate
+- css animations
 
 > 2 javascript files: one for desktop and tablet and another one for mobile implementations
