@@ -25,4 +25,4 @@
 - background overlay
 - monetate
 
-> 2 javascript files: one for desktop and tablet and another one for mobile
+> 2 javascript files: one for desktop and tablet and another one for mobile implementations
