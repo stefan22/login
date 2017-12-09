@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>
+        tooltip
+    </title>
+    <style type="text/css">
+        html,
+        body {
+            min-height: 100%;
+        }
+        
+        html {
+            background: #744a7c
+        }
+        
+        body {
+            position: relative;
+        }
+        
+        header {
+            margin-bottom: 2em;
+        }
+        
+        header h1 {
+            color: #ffffff;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+        
+        div#tooltip:after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-width: 26px;
+            border-style: solid;
+            border-color: transparent #ffffff transparent transparent;
+            top: -52px;
+            left: 295px;
+            transform: rotate(90deg);
+            background: transparent
+        }
+        
+        @keyframes totip {
+            0% {
+                opacity: 0;
+                top: -200px
+            }
+            100% {
+                opacity: 1;
+                top: 80px
+            }
+        }
+        
+        .face:hover {
+            animation: shake .82s cubic-bezier(.36, .07, .19, .97) both;
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+            perspective: 1000px
+        }
+        
+        @keyframes shake {
+            10%,
+            90% {
+                transform: translate3d(-1px, 0, 0)
+            }
+            20%,
+            80% {
+                transform: translate3d(2px, 0, 0)
+            }
+            30%,
+            50%,
+            70% {
+                transform: translate3d(-4px, 0, 0)
+            }
+            40%,
+            60% {
+                transform: translate3d(4px, 0, 0)
+            }
+        }
+        
+        .mode-name {
+            position: relative;
+            left: 0;
+            right: 0;
+            animation: nudge 2.5s ease;
+            animation-iteration-count: infinite;
+        }
+        
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes nudge {
+            0% {
+                transform: translate(0, 0);
+            }
+            80% {
+                transform: translate(0, 0);
+            }
+            90% {
+                transform: translate(-10px, 0);
+            }
+            93% {
+                transform: translate(12px, 0);
+            }
+            95% {
+                transform: translate(-8px, 0);
+            }
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+        
+        .lowrapper {
+            animation-name: totip;
+            animation-duration: 1s;
+            position: absolute;
+            transition: top .5s, opacity .5s;
+            right: 180px;
+            top: 115px
+        }
+        
+        #tooltip {
+            animation: shake .82s cubic-bezier(.36, .07, .19, .97) both;
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+            perspective: 1000px;
+            width: 330px;
+            background-color: #fff;
+            padding: 20px;
+            font-family: "FranklinGothicRegular", Arial, sans-serif
+        }
+        
+        .toobottom {
+            margin-bottom: 20px;
+        }
+        
+        .uno {
+            margin-right: 24px !important;
+            height: 28px !important;
+        }
+        
+        .pone.phone {
+            background-color: #9a9997;
+        }
+        
+        .tootop h1 {
+            font-size: 36px;
+            color: #823f90!important;
+            font-weight: bold!important;
+            text-align: center;
+            letter-spacing: -1px;
+            border-bottom: 1px solid #d6d6d6;
+            width: 98%;
+            margin: 0 auto;
+            padding: 10px 0 5px;
+            line-height: 46px;
+        }
+        
+        .missu:before {
+            content: "★";
+            display: block;
+            line-height: 1;
+            font-size: 20px;
+            margin-top: -20px;
+            margin-bottom: 10px;
+            color: #ef0d3c;
+            -webkit-animation: spin 2.5s ease;
+            animation: spin 2.5s ease;
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+            -webkit-transform-origin: center center;
+            transform-origin: center center;
+        }
+        
+        .pone {
+            margin: 20px 0;
+            border: 1px solid #9a8a8a;
+            border-radius: 4px;
+            background-color: #823f90;
+            padding: 8px 24px;
+            font-weight: 100;
+            color: #ffffff;
+            -webkit-text-fill-color: currentColor;
+        }
+        
+        #tooltip .toobottom p.pnull {
+            color: #333;
+            font-size: 18px;
+            line-height: 24px;
+            text-align: center;
+            padding: 5px 0;
+        }
+        
+        span.logcolor {
+            line-height: 30px;
+            text-align: left;
+            letter-spacing: .25px;
+            vertical-align: middle;
+            font-size: 16px;
+            font-weight: bold;
+            font-family: "FranklinGothicRegular", arial, sans-serif;
+            mix-blend-mode: luminosity;
+        }
+        
+        .pone a {
+            text-decoration: none;
+            color: #fff!important;
+            letter-spacing: .5px;
+            font-size: 16px;
+            font-weight: 100;
+            line-height: 30px;
+        }
+        
+        .toobottom p.pone:nth-child(3) {
+            margin-top: 0
+        }
+        
+        .toobottom button {
+            background-color: #fbfbfb;
+            padding: 12px 5px;
+            color: #333;
+            border: 1px solid #c1c3c3;
+            font-size: 18px;
+            line-height: 22px;
+            text-align: center;
+            cursor: pointer;
+            width: 80%;
+            margin: 0 auto;
+            display: block;
+        }
+        
+        .toobottom button:focus,
+        .toobottom button:active {
+            outline: 0
+        }
+        
+        img.chatup {
+            margin-right: 20px;
+            height: auto;
+            line-height: 30px;
+            vertical-align: middle;
+            display: inline-block;
+            mix-blend-mode: screen;
+        }
+        
+        .tooltip {
+            opacity: 1 !important;
+        }
+        
+        #tooltip,
+        .tootop,
+        .toobottom {
+            z-index: 10;
+        }
+        
+        #header-id,
+        .js-header-navigation.header-navigation,
+        .site-body {
+            z-index: 150;
+        }
+        
+        #tooltip {
+            border: 1px solid #e7e7e7;
+            border-radius: 4px;
+            box-shadow: 0px 1px 0 0px #9f9f9f;
+        }
+        
+        span.logcolor a {
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .lowrapper {
+            right: 29%;
+            top: 80px;
+        }
+        
+        #header-id {
+            position: relative;
+        }
+        
+        .testa {
+            width: 200px;
+            margin: 0 auto;
+            display: block;
+            opacity: 0;
+            position: relative;
+        }
+        
+        chawin {
+            width: 600px !important;
+            height: 700px !important;
+            bottom: 1% !important;
+            right: 1% !important;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>TOOLTIP</h1>
+    </header>
+    <div class="lowrapper">
+        <div id="tooltip">
+            <div class="tootop face">
+                <h1 class="mode-name missu"> We've Missed You </h1>
+            </div>
+            <div class="toobottom">
+                <p class="pnull">If you are unable to remember<br/> your login credentials<br/></p>
+                <p class="pone phone">
+                    <a href="tel:08000831988"><img class="chatup uno" src="https://sb.monetate.net/img/1/748/1317576.png" width="30" height="30">Call on <span class="logcolor">0800 111 222</span></a>
+                </p>
+                <p class="pone">
+                    <a href="javascript://Chat" id="chawin" onclick="liveagent.startChat(\'5730M000000IG3i\')"><img class="chatup" src="https://sb.monetate.net/img/1/748/1312856.png" width="30" height="30"> Click here to chat with us </a>
+                </p>
+                <button id="vainow"> I'm ok for now </button>
+            </div>
+        </div>
+        <script>
+            var modeList = [
+                'normal',
+                'difference',
+                'exclusion',
+                'luminosity'
+            ];
+            var elem = document.querySelector('.missu'),
+                propertyName = 'mix-blend-mode',
+                modeElem = document.querySelector('.mode-name');
+
+            var i = 0;
+            var missAction = setInterval(function() {
+                if (i == modeList.length) i = 0;
+                var mode = modeList[i];
+                elem.style.mixBlendMode = mode;
+                modeElem.innerText = "We've Missed You"
+                i++;
+            }, 2500);
+        </script>
+
+
+</body>
+
+</html>
