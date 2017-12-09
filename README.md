@@ -27,6 +27,8 @@
 - css animations
 
 > 2 javascript files: one for desktop and tablet and another one for mobile implementations lo
+> 
+> ![](images/due/images/tooltipPopup.png)
 
 
 ### also new login page with css animations
