@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>
+  tooltip
+</title>
+<style type="text/css">
+html,
+body {
+  min-height: 100% !important;
+  min-width: 100%;
+  margin:0;
+  padding: 0;
+  line-height: 1;
+}
+
+html {
+  background: #fff;
+  
+}
+
+body {
+  position: relative;
+}
+
+header {
+  margin-bottom: 2em;
+}
+
+header h1 {
+  color: #fff;
+  font-size: 24px;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 1em 0;
+  margin:0;
+}
+
+div#tooltip:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-width: 18px;
+  border-style: solid;
+  border-color: transparent #ffffff transparent transparent;
+  top: -36px;
+  left: 295px;
+  transform: rotate(90deg);
+  background: transparent
+}
+
+@keyframes totip {
+  0% {
+    opacity: 0;
+    top: -100px
+  }
+  100% {
+    opacity: 1;
+    top: 80px;
+  }
+}
+
+.face:hover {
+  animation: shake .82s cubic-bezier(.36, .07, .19, .97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0)
+  }
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0)
+  }
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0)
+  }
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0)
+  }
+}
+
+.mode-name {
+  position: relative;
+  left: 0;
+  right: 0;
+  animation: nudge 2.5s ease;
+  animation-iteration-count: infinite;
+}
+
+@keyframes nudge {
+  0% {
+    transform: translate(0, 0);
+  }
+  80% {
+    transform: translate(0, 0);
+  }
+  90% {
+    transform: translate(-10px, 0);
+  }
+  93% {
+    transform: translate(12px, 0);
+  }
+  95% {
+    transform: translate(-8px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.lowrapper {
+  animation-name: totip;
+  animation-duration: 1s;
+  position: absolute;
+  transition: top .5s, opacity .5s;
+  right: 180px;
+  top: 115px;
+  z-index: 20;
+}
+
+#tooltip {
+  animation: shake .82s cubic-bezier(.36, .07, .19, .97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  width: 330px;
+  max-width: 330px;
+  background-color: #fff;
+  padding: 13px 13px 15px 13px;
+  font-family: "FranklinGothicRegular", Arial, sans-serif
+}
+
+.tootop h1 {
+  font-size: 36px;
+  color: #823f90;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: -1px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px 0 1px;
+  line-height: 45px;
+}
+
+h2 {
+  font-size: 34px;
+  color: #bd5992;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: -1.5px;
+  width: 100%;
+  margin: 0 auto 25px;
+  padding: 0;
+  line-height: 42px;
+}
+
+.missu:before {
+  /* content: "★"; */
+  display: block;
+  color: #a489bb;
+  line-height: 1;
+  font-size: 20px;
+  margin-top: -20px;
+  margin-bottom: 10px;
+  -webkit-animation: spin 2.5s ease;
+  -moz-animation: spin 2.5s ease;
+  -ms-animation: spin 2.5s ease;
+  animation: spin 2.5s ease;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -ms-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-transform-origin: center center;
+  -moz-transform-origin: center center;
+  -o-transform-origin: center center;
+  -ms-transform-origin: center center;
+  transform-origin: center center;
+}
+
+.tooltip {
+  opacity: 1;
+}
+
+#tooltip,
+.tootop,
+.toobottom {
+  z-index: 10;
+}
+
+#header-id,
+.js-header-navigation.header-navigation,
+.site-body {
+  z-index: 150;
+}
+
+#tooltip {
+  border: 1px solid #e7e7e7;
+  border-radius: 4px;
+  box-shadow: 0px 1px 0 0px #9f9f9f;
+}
+
+.lowrapper {
+  right: 29%;
+  top: 80px;
+}
+
+#header-id {
+  position: relative;
+}
+
+.testa {
+  width: 200px;
+  margin: 0 auto;
+  display: block;
+  opacity: 0;
+  position: relative;
+}
+
+#ovrlay {
+  width: 100% !important;
+  height: 100% !important;
+  position: fixed;
+  animation-name: tootip;
+  animation-duration: 1s;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .6);
+  z-index: 10;
+  -webkit-transition: background-color 2s ease-in, opacity 2s ease-in;
+  -moz-transition: background-color 2s ease-in, opacity 2s ease-in;
+  -o-transition: background-color 2s ease-in, opacity 2s ease-in;
+  -ms-transition: background-color 2s ease-in, opacity 2s ease-in;
+  transition: background-color 2s ease-in, opacity 2s ease-in;
+  background: linear-gradient(200deg, #27156E, #6A2A88, #9F4981);
+}
+
+.toobottom img {
+  opacity: 1;
+  background-color: #fff;
+  margin: 0;
+}
+
+.toobottom img:hover {
+  -webkit-transition: background-color .3s ease-in, opacity .3s ease-in;
+  -moz-transition: background-color .3s ease-in, opacity .3s ease-in;
+  -o-transition: background-color .3s ease-in, opacity .3s ease-in;
+  -ms-transition: background-color .3s ease-in, opacity .3s ease-in;
+  transition: background-color .3s ease-in, opacity .3s ease-in;
+  opacity: .85;
+  background-color: rgba(0, 0, 0, .6);
+  cursor: pointer;
+}
+
+#ovrlay {
+  background-color: rgba(0, 0, 0, .6);
+  opacity: 1;
+  -webkit-transition: background-color .25s ease-in, opacity .35s ease-in, height .45s ease-out;
+  -moz-transition: background-color .25s ease-in, opacity .35s ease-in height .45s ease-out;
+  -o-transition: background-color .25s ease-in, opacity .35s ease-in height .45s ease-out;
+  -ms-transition: background-color .25s ease-in, opacity .35s ease-in height .45s ease-out;
+  transition: background-color .25s ease-in, opacity .35s ease-in height .45s ease-out;
+  height: 100%;
+  background: linear-gradient(200deg, #27156E, #6A2A88, #9F4981);
+}
+
+.toobottom .imgres {
+  width: 100%;
+  max-width: 594px;
+  margin: 0 auto;
+  height: auto;
+  display: block;
+}
+
+@media screen and (max-width:360px) {
+  div.lowrapper {
+    right: 4.2% !important;
+    top: 80px;
+  }
+  div#tooltip {
+    width: 300px !important;
+    height: auto;
+  }
+  div#tooltip:after {
+    left: 270px !important;
+    ;
+  }
+  .tootop h1 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width:375px) {
+  .lowrapper {
+    right: 2.2% !important;
+    top: 80px;
+  }
+  #tooltip {
+    width: 330px !important;
+    height: auto;
+  }
+  div#tooltip:after {
+    left: 295px;
+  }
+  .tootop h1 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width:320px) {
+  .lowrapper {
+    right: 5% !important;
+    top: 80px;
+  }
+  div#tooltip {
+    width: 260px !important;
+    height: auto;
+  }
+  div#tooltip:after {
+    left: 225px !important;
+  }
+  .tootop h1 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width:414px) {
+  div.lowrapper {
+    right: 5%;
+    top: 80px;
+  }
+  div#tooltip {
+    width: 330px;
+    height: auto;
+  }
+  div#tooltip:after {
+    left: 215px;
+  }
+  .tootop h1 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width:425px) {
+  .lowrapper {
+    right: 5%;
+    top: 80px;
+  }
+  #tooltip {
+    width: 330px;
+    height: auto;
+  }
+  div#tooltip:after {
+    left: 295px;
+  }
+  .tootop h1 {
+    font-size: 30px;
+  }
+}
+
+
+/* //ipads portrait and landscape */
+
+@media only screen and (min-device-width:768px) and (max-device-width:1366px) {
+  .lowrapper {
+    right: 10%;
+    top: 120px;
+  }
+  #tooltip {
+    width: 330px !important;
+    height: auto;
+  }
+  div#tooltip:after {
+    left: 295px;
+  }
+  .tootop h1 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width:1370px) {
+  .lowrapper {
+    right: 40% !important;
+    top: 120px !important;
+  }
+  #tooltip {
+    width: 330px !important;
+    height: auto;
+  }
+  div#tooltip:after {
+    left: 215px;
+  }
+  .tootop h1 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (orientation:landscape) {
+  html {
+    overflow-y: auto;
+  }
+  .lowrapper {
+    right: 10%;
+    top: 80px;
+  }
+  #tooltip {
+    width: 330px;
+    height: auto;
+  }
+  div#tooltip:after {
+    left: 295px;
+  }
+  .tootop h1 {
+    font-size: 30px;
+  }
+}
+</style>
+</head>
+  <body>
+
+    <header>
+      <h1>TOOLTIP</h1>
+    </header>
+
+    <div class="lowrapper">
+      <div id="tooltip">
+        <div class="tootop face">
+          <h1 class="mode-name missu"> We've Missed You </h1>
+          <h2>Sign in & play</h2>
+        </div>
+        <!-- endof tootop face -->
+        <div class="toobottom">
+          <img src="../images/turbotip.png" alt="fav game" width="594" height="445" class="imgres" />
+        </div>
+        <!-- endof toobottom -->
+      </div>
+      <!-- endof tooltip -->
+    </div>
+    <!-- endof lowrapper -->
+
+    <script>
+      //going from ipad to mobile
+      if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i)) {
+          var viewportmeta = document.querySelector('meta[name="viewport"]');
+          if (viewportmeta) {
+              viewportmeta.content = 'width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0';
+              document.body.addEventListener('gesturestart', function() {
+                  viewportmeta.content = 'width=device-width, minimum-scale=0.25, maximum-scale=1.6';
+              }, false);
+          }
+      }
+      //we've missed you.
+      var modeList = [
+          'normal',
+          'difference',
+          'exclusion',
+          'luminosity'
+      ];
+      var elem = document.querySelector('.missu'),
+          propertyName = 'mix-blend-mode',
+          modeElem = document.querySelector('.mode-name');
+      
+      var i = 0;
+      var missAction = setInterval(function() {
+          if (i == modeList.length) i = 0;
+          var mode = modeList[i];
+          elem.style.mixBlendMode = mode;
+          modeElem.innerText = "We've Missed You"
+          i++;
+      }, 2500);
+      
+      var olay; //overlay
+      document.addEventListener('DOMContentLoaded', function(e) {
+          //creates ovrly
+          olay = document.createElement('div');
+          olay.id = "ovrlay";
+          olay.className = "toptobottom";
+          //appends near body elem
+          var han = document.body.children[0];
+          han.parentElement.insertBefore(olay, han);
+          //sets opacity
+          olay.style.opacity = 1;
+          //sets window dimensions
+          olay.style.width = window.screen.width + "px";
+          olay.style.height = window.screen.height + "px";
+      
+      }, false);
+      
+      //onresize
+      window.addEventListener('resize', function(e) {
+          //reset new values first
+          olay.style.width = window.screen.width + "px";
+          olay.style.height = window.screen.height + "px";
+      
+      }, false);
+      
+      //clicking outside close popup -invisible div
+      var lowr;
+      lowr = document.querySelector('.lowrapper');
+      if ((lowr) && (lowr !== null)) {
+          //if popup is being displayed create invis div
+          var invis;
+          //invisible div
+          invis = document.createElement('div');
+          invis.id = "invis";
+          invis.className = "invis";
+          //set opacity/z-index
+          invis.style.opacity = 0;
+          invis.style.display = "hidden";
+          invis.style.zIndex = 10;
+          //sets window dimensions
+          invis.style.width = window.screen.width + "px";
+          invis.style.height = window.screen.height + "px";
+          //appends at bottom
+          document.body.appendChild(invis);
+          //click event
+          document.addEventListener('click', function(e) {
+              e.preventDefault();
+              var orly;
+              //if clicking on invis div
+              if (e.target.className == "invis" || e.target.id == "ovrlay") {
+                  //remove popup
+                  lowr.style.display = "none";
+                  //remove overlay
+                  if (document.getElementById('ovrlay') !== null) {
+                      orly = document.getElementById('ovrlay');
+                      orly.style.opacity = 0;
+      
+      
+                  }
+      
+              } //if
+      
+          }, false);
+      
+      
+      
+      } //if
+    </script>
+  </body>
+</html>
